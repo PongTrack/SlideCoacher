@@ -1,0 +1,23 @@
+<br/>
+<br/>
+<div class="container">
+  <div class="col-md-4">
+    <h4>Stats:</h4>
+    <ul>
+      <li>Name: {{actual.Name}}</li>
+      <li>Date: {{actual.Date | date}}
+      <li>Total: {{actual.Total}}</li>
+      <li>Lost: {{actual.Lost_Total / actual.Total * 100 | number:2}}%</li>
+    </ul>
+    <br/>
+    <br/>
+    <h4>Tips:</h4>
+    <p ng-repeat="tip in actual.tips">{{tip}}</p>
+  </div>
+  <div class="col-md-8">
+    <canvas id="doughnut" class="chart chart-doughnut"
+      chart-data="data" chart-labels="labels"
+      chart-colors="colors">
+    </canvas>
+  </div>
+</div>
